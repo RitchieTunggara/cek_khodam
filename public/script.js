@@ -26,19 +26,19 @@
 //     });
 // });
 
-function fetchSavedNumbers() {
-    fetch('/get-numbers')
-    .then(response => response.json())
-    .then(data => {
-        const savedNumbers = document.getElementById('saved-numbers');
-        savedNumbers.innerHTML = '';
-        data.numbers.forEach(number => {
-            const li = document.createElement('li');
-            li.textContent = number;
-            savedNumbers.appendChild(li);
-        });
-    });
-}
+// function fetchSavedNumbers() {
+//     fetch('/get-numbers')
+//     .then(response => response.json())
+//     .then(data => {
+//         const savedNumbers = document.getElementById('saved-numbers');
+//         savedNumbers.innerHTML = '';
+//         data.numbers.forEach(number => {
+//             const li = document.createElement('li');
+//             li.textContent = number;
+//             savedNumbers.appendChild(li);
+//         });
+//     });
+// }
 
 document.getElementById('check').addEventListener('click', function() {
     // const username = document.getElementById('name');
