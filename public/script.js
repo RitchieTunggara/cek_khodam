@@ -1,30 +1,30 @@
-document.getElementById('generate').addEventListener('click', function() {
-    const min = parseInt(document.getElementById('min').value);
-    const max = parseInt(document.getElementById('max').value);
-    if (isNaN(min) || isNaN(max) || min > max) {
-        alert('Please enter valid numbers with min less than or equal to max.');
-        return;
-    }
-    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-    document.getElementById('result').innerText = randomNumber;
+// document.getElementById('generate').addEventListener('click', function() {
+//     const min = parseInt(document.getElementById('min').value);
+//     const max = parseInt(document.getElementById('max').value);
+//     if (isNaN(min) || isNaN(max) || min > max) {
+//         alert('Please enter valid numbers with min less than or equal to max.');
+//         return;
+//     }
+//     const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+//     document.getElementById('result').innerText = randomNumber;
 
-    // Save the number to the backend
-    fetch('/save-number', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ number: randomNumber })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            fetchSavedNumbers();
-        } else {
-            alert('Failed to save the number.');
-        }
-    });
-});
+//     // Save the number to the backend
+//     fetch('/save-number', {
+//         method: 'POST',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//         body: JSON.stringify({ number: randomNumber })
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         if (data.success) {
+//             fetchSavedNumbers();
+//         } else {
+//             alert('Failed to save the number.');
+//         }
+//     });
+// });
 
 function fetchSavedNumbers() {
     fetch('/get-numbers')
