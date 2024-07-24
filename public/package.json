@@ -1,0 +1,19 @@
+{
+    "name": "random-number-generator",
+    "version": "1.0.0",
+    "description": "A simple random number generator",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Your Name",
+    "license": "ISC",
+    "dependencies": {
+        "body-parse": "^0.1.0",
+        "body-parser": "^1.19.0",
+        "express": "^4.19.2",
+        "sqlite3": "^5.1.7"
+    },
+    "keywords": []
+}
