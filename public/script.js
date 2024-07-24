@@ -63,6 +63,3 @@ document.getElementById('check').addEventListener('click', function() {
 
     document.getElementById('kodam_result').innerText = khodam_name[usernameVal%30];
 });
-
-// Fetch saved numbers on page load
-fetchSavedNumbers();
